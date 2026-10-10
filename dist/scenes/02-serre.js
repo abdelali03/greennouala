@@ -1,1 +1,5 @@
-export default {id:'serre',label:'La serre',image:'assets/serre-concept.png',video:'',render:()=>`<section id="serre" class="journey photo-scene"><div class="journey-shade"></div><div class="journey-copy"><p class="eyebrow">02 / AU FIL DE L’ALLÉE</p><h2>La nature donne<br>le rythme.<br><em>Suivons-la.</em></h2><p>Des premières pousses aux jardins qui prennent vie, découvrez un univers de feuilles, de textures et de possibilités.</p><a href="#croisement" class="text-link">Poursuivre la promenade <span>↓</span></a></div><div class="journey-caption"><span>PRENEZ LE TEMPS DE REGARDER</span><p>Votre prochain coup de cœur<br>se cache peut-être ici.</p></div></section>`};
+// Un moment du même travelling, sans changement de décor.
+export default {
+  id: 'serre', label: 'Au fil de l’allée', start: .24, end: .52,
+  render: () => `<section class="scene scene-serre" data-scene="serre" aria-labelledby="serre-title" hidden><p class="eyebrow">01 / LA PROMENADE</p><h2 id="serre-title">Un pas de plus.<br><em>Tout s’éveille.</em></h2><p class="scene-description">La lumière sur les feuilles.<br>Les nuances du vert.<br>Prenez le temps de regarder.</p><a class="underlined-link" href="#savoir-faire">Continuer dans la serre <span>↓</span></a></section>`,
+};

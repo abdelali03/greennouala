@@ -1,2 +1,7 @@
-// Renseigner le numéro international sans + ni espaces pour activer WhatsApp.
-export const settings = { whatsapp: '', reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches };
+export const settings = {
+  whatsapp: '', // Numéro international sans + ni espaces.
+  media: { desktop: 'assets/serre-scroll.mp4', mobile: 'assets/serre-scroll-mobile.mp4', poster: 'assets/serre-poster.png', sourceWidth: 1920, sourceHeight: 1080 },
+  scrollScreens: 6,
+  advisorVideo: '', // Ajouter la présentation filmée lorsqu’elle sera disponible.
+  advisorCaptions: '',
+};

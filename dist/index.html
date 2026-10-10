@@ -1,3 +1,32 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#183c2d"><meta name="description" content="Entrez dans l’univers GreenNouala. Découvrez les plantes, imaginez votre jardin et échangez avec notre équipe."><title>GreenNouala — Entrez dans le vivant</title><link rel="stylesheet" href="styles.css"></head>
-<body><a class="skip" href="#croisement">Passer la visite</a><header><a href="#accueil" class="brand"><span class="brand-icon">❧</span> green<span>nouala</span><i> PÉPINIÈRE & PAYSAGE</i></a><nav aria-label="Navigation principale"><a href="#serre">La pépinière</a><a href="#collections">Nos plantes</a><a href="#jardins">Vos jardins</a></nav><button class="contact header-contact">Parlons de votre projet <span>↗</span></button></header><main id="scenes"></main><footer><a class="brand" href="#accueil">❧ greennouala</a><p>Des plantes. Des idées. Un jardin à vous.</p><span>Prototype · photographies d’ambiance</span><a href="#accueil">Retour en haut ↑</a></footer><div class="visit-progress"><span id="scene-number">01</span><div><i id="progress"></i></div><span>06</span></div><button class="whatsapp contact" aria-label="Contacter GreenNouala sur WhatsApp"><span>◉</span> Discutons de votre jardin <span>↗</span></button><dialog id="detail"><button class="close" aria-label="Fermer">×</button><div id="detail-content"></div></dialog><script type="module" src="app.js"></script></body></html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b20">
+  <meta name="description" content="Une promenade immersive dans l’univers GreenNouala. Avancez dans la serre, découvrez les plantes et imaginez votre jardin.">
+  <title>GreenNouala — Une parenthèse vivante</title>
+  <link rel="preload" href="assets/serre-entree.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#visite">Aller à la visite</a>
+  <div class="cinema" aria-hidden="true">
+    <img class="cinema-poster" src="assets/serre-entree.jpg" alt="" fetchpriority="high">
+    <video id="journey-video" muted playsinline preload="auto" disablepictureinpicture tabindex="-1"></video>
+    <div class="cinema-shade"></div><div class="cinema-vignette"></div>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="GreenNouala, début de la visite"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 36V16M16 25C4 25 3 14 4 8c10 0 16 5 12 17ZM16 18C15 7 23 3 29 3c0 9-4 16-13 15Z"/></svg><span>green<span class="brand-light">nouala</span><small>PÉPINIÈRE & PAYSAGE</small></span></a>
+    <nav aria-label="Navigation principale"><a href="#serre">La visite</a><a href="#collections" data-panel="collections">Nos plantes</a><a href="#jardins" data-panel="jardins">Vos jardins</a></nav>
+    <button class="header-contact" data-contact>Un projet en tête ? <span>↗</span></button>
+  </header>
+  <main id="visite" tabindex="-1"><div id="journey-track" aria-label="Parcours de la serre, contrôlé par le défilement"></div><div id="scene-overlays" class="scene-overlays"></div></main>
+  <div class="media-status" role="status" aria-live="polite"><span class="status-dot"></span><span id="media-status-text">Préparation de la promenade…</span><button id="retry-video" hidden>Réessayer</button></div>
+  <div class="tour-controls"><button id="motion-toggle" aria-pressed="false" aria-label="Désactiver les mouvements de la visite"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg><span id="motion-label">Mouvement activé</span></button><button id="clean-toggle" aria-pressed="false" aria-label="Masquer les textes pour admirer la serre">Vue libre <span>⤢</span></button></div>
+  <div class="journey-hud"><div class="journey-location"><span class="location-mark">✳</span><span>GREENNOUALA<small id="chapter-label">L’entrée de la serre</small></span></div><nav class="chapter-nav" aria-label="Étapes de la promenade"></nav><div class="journey-percent"><span id="journey-percent">00</span><small> / 100</small><span class="percent-arrow">↓</span></div><div class="journey-line"><i id="journey-progress"></i></div></div>
+  <dialog id="explore-dialog" class="explore-dialog" aria-labelledby="panel-heading"><div class="panel-top"><span>GREENNOUALA / EXPLORER</span><button class="dialog-close" aria-label="Fermer et revenir à la serre">Fermer <span>×</span></button></div><nav class="panel-nav" aria-label="Espaces de découverte"><button data-panel="conseiller">Le conseil</button><button data-panel="collections">Les plantes</button><button data-panel="jardins">Les jardins</button></nav><div id="panel-content"></div></dialog>
+  <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-heading"><button class="dialog-close" aria-label="Fermer">×</button><p class="eyebrow">UNE ENVIE, UNE CONVERSATION</p><h2 id="contact-heading">Faisons grandir<br><em>votre projet.</em></h2><p id="contact-info"></p><label for="contact-message">Votre message</label><textarea id="contact-message" rows="4"></textarea><button id="contact-action" class="button button-dark">Copier mon message <span>↗</span></button><p id="contact-feedback" role="status"></p></dialog>
+  <noscript><div class="noscript">Activez JavaScript pour parcourir la serre. GreenNouala · Pépinière & paysage.</div></noscript>
+  <script type="module" src="app.js"></script>
+</body></html>
