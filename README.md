@@ -1,49 +1,57 @@
-# GreenNouala — visite vidéo au scroll
+# Green Nouala
 
-Site statique sans dépendances. Lancer `npm run dev`, puis ouvrir http://localhost:4173. Le serveur prend en charge les requêtes partielles HTTP Range nécessaires à la recherche vidéo.
+Statische Website mit HTML, CSS und JavaScript. Kein Framework, keine Installation und kein Build erforderlich. Es wurde nichts veröffentlicht und kein Git-Push ausgeführt.
 
-## Parcours continu
+## Lokal öffnen
 
-Une seule vidéo plein écran reste montée pendant toute la visite. Le scroll contrôle sa position de lecture dans les deux sens. Elle est en pause lorsqu’on ne défile plus. Les scènes sont des textes et des actions superposés au même décor, pas des sections photographiques.
+`index.html` direkt im Browser öffnen. Für eine HTTP-Vorschau mit Node.js 22:
 
-`dist/engine/video-scrubber.js` attend la fin du décodage précédent avant de rechercher l’image suivante et conserve la cible de scroll la plus récente. `dist/engine/timeline.js` calcule les positions. `dist/app.js` relie le moteur, la navigation et les panneaux.
+```sh
+node scripts/serve.mjs
+```
 
-## Scènes indépendantes
+Danach `http://127.0.0.1:4173` öffnen. Mit `Strg+C` beenden.
 
-| Module | Rôle |
-| --- | --- |
-| `dist/scenes/01-accueil.js` | Accueil, de 0 à 24 % du parcours |
-| `dist/scenes/02-serre.js` | Promenade, de 24 à 52 % |
-| `dist/scenes/03-croisement.js` | Savoir-faire de 52 à 77 %, puis choix des espaces |
-| `dist/scenes/04-conseiller.js` | Panneau conseil, indépendant du travelling |
-| `dist/scenes/05-collections.js` | Galerie d’ambiances et filtres |
-| `dist/scenes/06-jardins.js` | Concepts paysagers et messages de contact |
+## Kontaktdaten ändern
 
-Modifier `start` et `end` pour déplacer un texte sur la vidéo. Garder les intervalles continus de 0 à 1. `scrollScreens` dans `dist/config.js` règle la longueur du défilement. Le bouton « Vue libre » masque les textes tout en conservant le travelling.
+In `config.js` Telefonnummer, WhatsApp-Nummer, E-Mail, Adresse, Maps und soziale Profile eintragen. WhatsApp verwendet die internationale Nummer ohne Leerzeichen, beispielsweise `212600000000`.
 
-## Médias fournis
+Die Devis-Formulare prüfen die Eingaben und bereiten einen WhatsApp- oder E-Mail-Entwurf vor. Der Besucher bestätigt das Absenden in der jeweiligen Anwendung. Solange keine eigenen Kontaktdaten konfiguriert sind, lässt sich die Anfrage als Textdatei herunterladen. Es wird keine erfolgreiche Zustellung behauptet.
 
-Un MP4 et un PNG ont été reçus. Le MP4 dure 10,042 s, mesure 1920 × 1080, contient 241 images et une seule image clé. Ce fichier est Full HD, pas 4K.
+Ein eigener HTTPS-Empfänger für POST/JSON kann optional als `formEndpoint` eingetragen werden. GitHub Pages selbst verarbeitet keine Formulare. Serverseitige Verarbeitung, CORS und Spam-Schutz liegen dann beim eigenen Empfänger. Ohne diesen Eintrag braucht die Website keinen Serverdienst.
 
-Deux versions ont été encodées à partir du même MP4, avec une image clé toutes les six images et la table MP4 en tête :
+## Enthaltene Bereiche
 
-- `dist/assets/serre-scroll.mp4` : 1920 × 1080, CRF 20, environ 26 Mo.
-- `dist/assets/serre-scroll-mobile.mp4` : 1280 × 720, CRF 22, environ 11 Mo.
-- `dist/assets/serre-entree.jpg` : première image du MP4, pour afficher la même entrée pendant le chargement.
-- `dist/assets/serre-poster.png` : PNG fourni, utilisé dans les panneaux de découverte.
+- Startseite, Pépinière, Geschichte und Services.
+- Portfolio mit allen 13 verlinkten Projektseiten.
+- Beide Blogbereiche mit den verlinkten Artikeln sowie Kontakt und Devis.
+- Bismarckia-Landingpage auf Französisch und Darija, inklusive Galerie, Vergleich, FAQ, Bildvergrößerung und Angebotsformular.
+- Pflanzenkatalog mit sieben botanischen Einträgen, Suche, Kategorien und Angebotslinks.
+- Die beiden zusätzlichen Startseiten aus der Sitemap und eine Datenschutzerklärung.
 
-Les fichiers originaux de Downloads restent inchangés. Les copies intermédiaires et outils sont dans `.qa/`, ignoré par Git et exclu du déploiement. Remplacer les chemins dans `dist/config.js` pour changer de travelling ; remplacer aussi l’image d’entrée et son chemin dans `dist/index.html`. Pour une vraie version 4K, utiliser une source 3840 × 2160 : agrandir la vidéo actuelle ne crée pas de détails supplémentaires.
+Alle internen Links und Laufzeitdateien sind relativ, damit auch `https://BENUTZER.github.io/REPOSITORY/` funktioniert. Die Bismarckia-Seite liegt unter `bismarckia/index.html`, im selben Repository.
 
-Le croisement ouvre les panneaux sur le même décor. Le fichier reçu ne contient pas de bifurcations filmées ni de conseiller. Pour une rotation réelle à gauche ou à droite, fournir les séquences raccordées correspondantes et étendre le moteur de médias ; l’interface actuelle ne prétend pas simuler ces déplacements.
+## Prüfen
 
-## Contact et conseiller
+```sh
+node scripts/check.mjs
+```
 
-Configurer `whatsapp` dans `dist/config.js` avec le numéro international sans + ni espaces. Sans numéro, le visiteur prépare et copie son message. La vidéo du conseiller et ses sous-titres sont facultatifs : renseigner `advisorVideo` et `advisorCaptions`.
+Prüft lokale Links, Bilder, Styles, JavaScript-Syntax, Formularstruktur und HTTP-Abruf aller Seiten unter einem Repository-Unterpfad. Die visuelle Browserprüfung war in der Arbeitsumgebung nicht verfügbar; eine pixelgenaue Übereinstimmung ist deshalb nicht bestätigt.
 
-Les galeries présentent des ambiances issues de l’image fournie, sans inventer de références disponibles ou de jardins réalisés. Remplacer ces contenus quand le catalogue et les réalisations seront prêts.
+## GitHub Actions
 
-## Vérification
+Der Workflow `.github/workflows/deploy.yml` ist vorbereitet. Er prüft die Dateien und veröffentlicht über GitHub Pages, sobald **du** den Code auf `main` oder `master` pushst oder den Workflow manuell startest.
 
-`npm run check` vérifie les modules JavaScript. Avec Chrome installé à son emplacement Windows habituel et le serveur lancé, `node scripts/verify-browser.mjs` vérifie dans un vrai navigateur : avancée/recul, changements des images décodées, vidéo unique, filtres, messages paysagers, panneaux, conservation du scroll, affichage mobile et mouvements réduits. Captures dans `.qa/`.
+1. Code in dein GitHub-Repository pushen.
+2. Im Repository **Settings → Pages → Build and deployment → Source: GitHub Actions** auswählen.
+3. Workflow **Deploy Green Nouala to GitHub Pages** ausführen bzw. den Push-Lauf prüfen.
 
-La préférence système de mouvements réduits affiche une image fixe et ne charge pas le travelling avant activation volontaire. Les panneaux sont des dialogues natifs accessibles au clavier, fermables avec Échap. Safari/iPhone et les connexions lentes restent à tester sur appareils réels.
+Der Workflow kopiert nur Website-Dateien in das Pages-Artefakt. Git-Metadaten und lokale Recherchedateien gehören nicht dazu. Die verwendeten Pages-Aktionen entsprechen dem [offiziellen GitHub-Beispiel](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Vorlageninhalte
+
+Layout und Inhalte wurden anhand von [Pépinière Belkora](https://www.pepinierebelkora.com/) und der [Bismarckia-Seite](https://bismarckia.pepinierebelkora.com/) lokal übernommen und für Green Nouala verbunden. Die ursprünglichen Formulardienste und Tracking-Skripte sind entfernt.
+
+Fotos, Portfolio-Projekte, Kundenbewertungen, Kundenlogos, Jahreszahlen, Garantien und Unternehmensangaben aus der Vorlage sind **Beispielinhalte, keine nachgewiesenen Green-Nouala-Referenzen**. Die Website kennzeichnet diese Vorlage. Vor einer Veröffentlichung die Beispielinhalte durch eigene Angaben ersetzen und die Nutzungsrechte für übernommene Fotos und Schriftdateien klären. Einzelheiten und Quelldateien stehen in `docs/CONTENT.md`, `docs/reference-pages.json`, `docs/asset-sources.json` und `docs/plant-photos.html`.
+# greennouala
