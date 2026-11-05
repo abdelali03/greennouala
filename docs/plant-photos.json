@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Phoenix canariensis",
+    "output": "assets/images/phoenix-canariensis.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Phoenix_canariensis_%28Puntallana%29_01.jpg/960px-Phoenix_canariensis_%28Puntallana%29_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Phoenix_canariensis"
+  },
+  {
+    "name": "Olea europaea",
+    "output": "assets/images/olea-europaea.JPG",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Olea_europaea_cuspidata-africana_Cape_Town.JPG/960px-Olea_europaea_cuspidata-africana_Cape_Town.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Olea_europaea"
+  },
+  {
+    "name": "Jacaranda mimosifolia",
+    "output": "assets/images/jacaranda-mimosifolia.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Jacarand%C3%A1-mimoso_%28do_tupi_%C3%AEakarand%C3%A1%29_-_54942878507_02.jpg/960px-Jacarand%C3%A1-mimoso_%28do_tupi_%C3%AEakarand%C3%A1%29_-_54942878507_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Jacaranda_mimosifolia"
+  },
+  {
+    "name": "Ficus microcarpa",
+    "output": "assets/images/ficus-microcarpa.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Ficus_microcarpa_-_La_Gomera_01.jpg/960px-Ficus_microcarpa_-_La_Gomera_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Ficus_microcarpa"
+  },
+  {
+    "name": "Cupressus sempervirens",
+    "output": "assets/images/cupressus-sempervirens.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/%CE%95%CE%B8%CE%BD%CE%B9%CE%BA%CF%8C%CF%82_%CE%94%CF%81%CF%85%CE%BC%CF%8C%CF%82_%CE%A3%CE%B1%CE%BC%CE%B1%CF%81%CE%B9%CE%AC%CF%82.jpg/960px-%CE%95%CE%B8%CE%BD%CE%B9%CE%BA%CF%8C%CF%82_%CE%94%CF%81%CF%85%CE%BC%CF%8C%CF%82_%CE%A3%CE%B1%CE%BC%CE%B1%CF%81%CE%B9%CE%AC%CF%82.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Cupressus_sempervirens"
+  },
+  {
+    "name": "Strelitzia nicolai",
+    "output": "assets/images/strelitzia-nicolai.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Strelitzia_nicolai_3.jpg/960px-Strelitzia_nicolai_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Strelitzia_nicolai"
+  }
+]

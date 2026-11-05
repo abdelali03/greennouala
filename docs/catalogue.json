@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Palmier de Bismarck",
+    "latin": "Bismarckia nobilis",
+    "category": "palmiers",
+    "type": "Palmier",
+    "description": "Un feuillage en éventail bleu argenté et une silhouette sculpturale pour les jardins ouverts.",
+    "image": "assets/images/419160de3026-produit-bismarckia-specimen-portrait.jpg",
+    "detail": true
+  },
+  {
+    "name": "Palmier des Canaries",
+    "latin": "Phoenix canariensis",
+    "category": "palmiers",
+    "type": "Palmier",
+    "description": "Une couronne généreuse de palmes arquées, pour structurer une entrée ou composer une allée.",
+    "image": "assets/images/phoenix-canariensis.jpg"
+  },
+  {
+    "name": "Olivier",
+    "latin": "Olea europaea",
+    "category": "arbres",
+    "type": "Arbre méditerranéen",
+    "description": "Feuillage persistant, reflets argentés et tronc de caractère. Un grand classique du jardin méditerranéen.",
+    "image": "assets/images/olea-europaea.JPG"
+  },
+  {
+    "name": "Jacaranda",
+    "latin": "Jacaranda mimosifolia",
+    "category": "arbres",
+    "type": "Arbre à fleurs",
+    "description": "Une floraison mauve et un feuillage léger, pour apporter de la couleur et une ombre délicate.",
+    "image": "assets/images/jacaranda-mimosifolia.jpg"
+  },
+  {
+    "name": "Ficus",
+    "latin": "Ficus microcarpa",
+    "category": "arbres",
+    "type": "Arbre persistant",
+    "description": "Une végétation dense et une belle présence, pour les jardins, les haies et les compositions structurées.",
+    "image": "assets/images/ficus-microcarpa.jpg"
+  },
+  {
+    "name": "Cyprès de Provence",
+    "latin": "Cupressus sempervirens",
+    "category": "arbres",
+    "type": "Conifère",
+    "description": "Une ligne élancée et un feuillage persistant pour rythmer les perspectives et les limites du jardin.",
+    "image": "assets/images/cupressus-sempervirens.jpg"
+  },
+  {
+    "name": "Oiseau de paradis géant",
+    "latin": "Strelitzia nicolai",
+    "category": "tropicaux",
+    "type": "Plante tropicale",
+    "description": "De grandes feuilles graphiques pour donner du volume et une atmosphère tropicale aux espaces abrités.",
+    "image": "assets/images/strelitzia-nicolai.jpg"
+  }
+]
